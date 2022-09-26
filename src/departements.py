@@ -1,7 +1,7 @@
 
 # Source des données: https://github.com/babeuloula/adjacent-departments/blob/master/src/AdjacentDepartments.php
 
-depts = {
+departements_adjacents = {
     "01": ["38", "73", "74", "39", "71", "69"],
     "02": ["59", "80", "60", "77", "51", "08"],
     "03": ["42", "71", "58", "18", "23", "63"],
@@ -99,3 +99,5 @@ depts = {
     "95": ["78", "27", "60", "93", "92"]
 }
 
+#def decode_depts(s):
+#    s.split()
