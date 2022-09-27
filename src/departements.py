@@ -99,5 +99,33 @@ departements_adjacents = {
     "95": ["78", "27", "60", "93", "92"]
 }
 
-#def decode_depts(s):
-#    s.split()
+
+def split_group(txt, n):
+    return [(txt[i:i+n]) for i in range(0, len(txt), n)]
+
+
+def decode_depts(s):
+    txt = s
+    if len(s) % 2 != 0:
+        txt = "0{}".format(s)
+    blocs = split_group(txt, 2)
+    return blocs
+
+
+def dep_valides(liste):
+    if len(liste) == 0:
+        return False
+    for item in liste:
+        if item not in departements_adjacents.keys():
+            return False
+    if len(set(liste)) != len(liste):  # Doublons non acceptés
+        return False
+    return True
+
+
+def adjacents2(d1, d2):
+    return d1 in departements_adjacents.keys() and d2 in departements_adjacents[d1]
+
+
+def adjacents3(d1, d2, d3):
+    return adjacents2(d1, d2) and adjacents2(d1, d3) and adjacents2(d2, d3)
